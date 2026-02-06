@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+@layer components {
+  .input {
+    @apply w-full px-4 py-3 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 text-white font-medium placeholder-white/50 caret-white outline-none focus:ring-2 focus:ring-indigo-400 transition shadow-inner;
+  }
+
+  .btn-primary {
+    @apply w-full py-3 rounded-xl bg-linear-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 transition font-semibold shadow-lg;
+  }
+}
