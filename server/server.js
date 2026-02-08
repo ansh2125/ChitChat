@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv/config";
 import { createServer } from "node:http";
 import { connectDb } from "./lib/db.js";
+import { globalErrorHandler } from "./middlewares/error.middleware.js";
 
 //create express app and http server
 const app = express();
@@ -11,7 +12,7 @@ const server = createServer(app);
 //middlewares 
 app.use(express.json({ limit: "4mb" }));
 app.use(cors());
-
+app.use(globalErrorHandler)
 //server testing
 app.get("/", (req, res) => {
     res.send("<h1>Hello</h1>")
